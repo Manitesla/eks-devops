@@ -26,18 +26,16 @@ module "eks" {
       principal_arn = aws_iam_role.github_actions.arn
 
       policy_associations = {
-        deploy_hello_world = {
-          policy_arn = "arn:aws:eks::aws:cluster-access-policy/AmazonEKSEditPolicy"
+        deploy = {
+          policy_arn = "arn:aws:eks::aws:cluster-access-policy/AmazonEKSClusterAdminPolicy"
 
           access_scope = {
-            type       = "namespace"
-            namespaces = ["hello-world"]
+            type = "cluster"
           }
         }
       }
     }
   }
-
   eks_managed_node_groups = {
     general = {
       name = "${var.cluster_name}-nodes"
