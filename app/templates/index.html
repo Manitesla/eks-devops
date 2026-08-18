@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AWS EKS DevOps Assignment</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: #e2e8f0;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+            padding: 60px 20px;
+        }
+
+        .hero {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #16a34a;
+            color: white;
+            padding: 8px 18px;
+            border-radius: 25px;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+            color: white;
+        }
+
+        .subtitle {
+            color: #94a3b8;
+            font-size: 20px;
+            line-height: 1.6;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 12px;
+            padding: 25px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #38bdf8;
+        }
+
+        .card h3 {
+            color: #38bdf8;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #cbd5e1;
+            line-height: 1.6;
+        }
+
+        .architecture {
+            margin-top: 50px;
+            background: #020617;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .architecture h2 {
+            margin-bottom: 25px;
+        }
+
+        .flow {
+            color: #38bdf8;
+            font-size: 18px;
+            line-height: 2;
+        }
+
+        .status {
+            margin-top: 50px;
+            text-align: center;
+            padding: 25px;
+            background: #14532d;
+            border-radius: 12px;
+        }
+
+        .status h2 {
+            color: #86efac;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            color: #64748b;
+        }
+
+        code {
+            color: #facc15;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <section class="hero">
+
+        <div class="badge">
+            ✓ Deployment Successful
+        </div>
+
+        <h1>AWS EKS DevOps Assignment</h1>
+
+        <p class="subtitle">
+            End-to-End Kubernetes Deployment using
+            Terraform, Docker, Helm, GitHub Actions,
+            Prometheus and Grafana
+        </p>
+
+    </section>
+
+
+    <section class="cards">
+
+        <div class="card">
+            <h3>☁ AWS Infrastructure</h3>
+            <p>
+                Infrastructure provisioned using Terraform including
+                VPC, subnets, IAM, ECR and Amazon EKS.
+            </p>
+        </div>
+
+
+        <div class="card">
+            <h3>☸ Amazon EKS</h3>
+            <p>
+                The application is running as multiple Kubernetes pods
+                on an Amazon EKS managed node group.
+            </p>
+        </div>
+
+
+        <div class="card">
+            <h3>🐳 Docker & ECR</h3>
+            <p>
+                Application container images are built with Docker
+                and securely stored in Amazon ECR.
+            </p>
+        </div>
+
+
+        <div class="card">
+            <h3>⎈ Helm</h3>
+            <p>
+                Kubernetes Deployment, Service, Ingress and
+                ServiceMonitor are managed using a custom Helm chart.
+            </p>
+        </div>
+
+
+        <div class="card">
+            <h3>⚙ CI/CD</h3>
+            <p>
+                GitHub Actions automatically builds images,
+                pushes them to ECR and deploys to EKS using Helm.
+            </p>
+        </div>
+
+
+        <div class="card">
+            <h3>🔐 GitHub OIDC</h3>
+            <p>
+                GitHub authenticates securely with AWS using OIDC
+                without storing permanent AWS credentials.
+            </p>
+        </div>
+
+
+        <div class="card">
+            <h3>📊 Prometheus</h3>
+            <p>
+                Application and Kubernetes metrics are collected
+                using Prometheus and ServiceMonitor.
+            </p>
+        </div>
+
+
+        <div class="card">
+            <h3>📈 Grafana</h3>
+            <p>
+                Application availability, request rate, CPU and memory
+                metrics are visualized using Grafana dashboards.
+            </p>
+        </div>
+
+    </section>
+
+
+    <section class="architecture">
+
+        <h2>Deployment Flow</h2>
+
+        <div class="flow">
+            GitHub → GitHub Actions → Docker → Amazon ECR
+            <br>
+            ↓
+            <br>
+            Amazon EKS → Helm → Kubernetes Service → AWS ALB
+            <br>
+            ↓
+            <br>
+            Prometheus → Grafana
+        </div>
+
+    </section>
+
+
+    <section class="status">
+
+        <h2>✓ Application is Running Successfully</h2>
+
+        <p>
+            This page is being served from a containerized Flask
+            application running inside Amazon EKS.
+        </p>
+
+        <br>
+
+        <p>
+            Health Endpoint:
+            <code>/health</code>
+            &nbsp; | &nbsp;
+            Metrics Endpoint:
+            <code>/metrics</code>
+        </p>
+
+    </section>
+
+
+    <footer>
+        AWS EKS DevOps Take-Home Assignment
+    </footer>
+
+</div>
+
+</body>
+</html>

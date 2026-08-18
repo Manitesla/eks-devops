@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, Response
+from flask import Flask, jsonify, Response, render_template
 from prometheus_client import Counter, generate_latest, CONTENT_TYPE_LATEST
 
 app = Flask(__name__)
@@ -12,11 +12,7 @@ REQUEST_COUNT = Counter(
 @app.route("/")
 def hello():
     REQUEST_COUNT.inc()
-
-    return jsonify({
-        "message": "Hello World",
-        "status": "success"
-    })
+    return render_template("index.html")
 
 
 @app.route("/health")
@@ -35,7 +31,4 @@ def metrics():
 
 
 if __name__ == "__main__":
-    app.run(
-        host="0.0.0.0",
-        port=8080
-    )
+    app.run(host="0.0.0.0", port=8080)

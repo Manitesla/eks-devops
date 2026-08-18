@@ -7,6 +7,7 @@ COPY req.txt .
 RUN pip install --no-cache-dir -r req.txt
 
 COPY app.py .
+COPY templates ./templates
 
 RUN useradd --create-home appuser
 
