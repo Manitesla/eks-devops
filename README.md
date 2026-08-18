@@ -976,7 +976,7 @@ AWS STS
 Temporary AWS Credentials
 ```
 
-The repository used is:
+The repo used is:
 
 ```text
 Manitesla/eks-devops
